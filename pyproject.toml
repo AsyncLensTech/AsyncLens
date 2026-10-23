@@ -4,7 +4,7 @@ build-backend = "maturin"
 
 [project]
 name = "asynclens"
-version = "0.1.1"
+version = "0.1.2"
 
 description = "A native Rust event loop watchdog for Python Asyncio and AnyIO applications."
 
