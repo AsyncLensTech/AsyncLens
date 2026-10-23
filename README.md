@@ -9,7 +9,7 @@ An ultra-performant, low-overhead native event loop watchdog for Python **Asynci
 - **Zero-Cost Abstraction:** Built on PyO3 and native Rust atomic synchronization primitives (`AtomicBool` with `Ordering::Relaxed`).
 - **No GIL Contention:** The monitoring watchdog executes on an isolated native OS thread entirely outside the Python execution path, preserving microsecond-level runtime performance.
 - **Production Deduplication:** Implements a deterministic state machine to group cascading thread freezes into a single, clean timeline block. It fires a single alert when the loop stalls and a single recovery update when traffic resumes—eliminating alert fatigue and log storming.
-- **Lean Architecture:** Distributed with zero unnecessary dependencies. Standard `asyncio` loop handling is fully self-contained.
+- **Lean Architecture:** Distributed with zero unnecessary dependencies. Standard `asyncio` loop handling is fully self-contained, while `anyio` support lives in a separate, isolated import module.
 - **Framework Agnostic:** Seamlessly integrates with raw async scripts, background task workers (`Celery`, `Arq`), or modern web frameworks like **FastAPI** and **Starlette** via standard lifecycle context managers.
 
 ## Getting started

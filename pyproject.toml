@@ -4,18 +4,47 @@ build-backend = "maturin"
 
 [project]
 name = "asynclens"
-version = "0.1.0"
-description = "Watchdog d'Event Loop FastAPI écrit en Rust"
+version = "0.1.1"
+
+description = "A native Rust event loop watchdog for Python Asyncio and AnyIO applications."
+
+readme = "README.md"
 requires-python = ">=3.10"
+license = { text = "Apache-2.0" }
+authors = [
+    { name = "Guénaël Labois", email = "glabois@gmail.com" }
+]
+keywords = ["asyncio", "anyio", "fastapi", "rust", "pyo3", "watchdog", "performance", "telemetry"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Rust",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: System :: Monitoring"
+]
 dependencies = []
+
+
+[project.optional-dependencies]
+anyio = ["anyio>=3.0.0"]
+
+[project.urls]
+Homepage = "https://github.com"
+Repository = "https://github.com.git"
+"Bug Tracker" = "https://github.com/issues"
 
 [tool.maturin]
 bindings = "pyo3"
-# ✅ Indique à Maturin de compiler le binaire sous le nom '_native' INSIDE votre dossier 'asynclens'
 module-name = "asynclens._native"
-# ✅ Obligatoire puisque vos packages Python résident dans le dossier 'src'
-python-source = "python"
+
+
+python-source = "python" 
 
 [project.scripts]
-# ✅ Indique à uv d'appeler la fonction 'main' située dans src/asynclens/__init__.py
 asynclens = "asynclens:main"
