@@ -35,9 +35,9 @@ dependencies = []
 anyio = ["anyio>=3.0.0"]
 
 [project.urls]
-Homepage = "https://github.com"
-Repository = "https://github.com.git"
-"Bug Tracker" = "https://github.com/issues"
+Homepage = "https://github.com/AsyncLensTech/AsyncLens"
+Repository = "https://github.com/AsyncLensTech/AsyncLens.git"
+"Bug Tracker" = "https://github.com/AsyncLensTech/AsyncLens/issues"
 
 [tool.maturin]
 bindings = "pyo3"
