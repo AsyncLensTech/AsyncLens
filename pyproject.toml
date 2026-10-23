@@ -1,0 +1,21 @@
+[build-system]
+requires = ["maturin>=1.0,<2.0"]
+build-backend = "maturin"
+
+[project]
+name = "asynclens"
+version = "0.1.0"
+description = "Watchdog d'Event Loop FastAPI écrit en Rust"
+requires-python = ">=3.10"
+dependencies = []
+
+[tool.maturin]
+bindings = "pyo3"
+# ✅ Indique à Maturin de compiler le binaire sous le nom '_native' INSIDE votre dossier 'asynclens'
+module-name = "asynclens._native"
+# ✅ Obligatoire puisque vos packages Python résident dans le dossier 'src'
+python-source = "python"
+
+[project.scripts]
+# ✅ Indique à uv d'appeler la fonction 'main' située dans src/asynclens/__init__.py
+asynclens = "asynclens:main"
